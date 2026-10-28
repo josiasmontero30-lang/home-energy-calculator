@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Energy Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Home Energy Calculator</h1>
+            <p class="subtitle">Blower Door & Duct Leakage Analysis</p>
+        </header>
+
+        <form id="calcForm">
+            <!-- First Floor -->
+            <section class="card">
+                <h2>First Floor</h2>
+                <div class="grid">
+                    <label>Width (ft)
+                        <input type="number" id="ancho" step="0.1" required>
+                    </label>
+                    <label>Length (ft)
+                        <input type="number" id="largo" step="0.1" required>
+                    </label>
+                    <label>Wall Height (ft)
+                        <input type="number" id="alturaP" step="0.1" required>
+                    </label>
+                    <label>Roof Height (ft)
+                        <input type="number" id="alturaT" step="0.1" required>
+                    </label>
+                    <label>Excluded Width (ft)
+                        <input type="number" id="noDeseadoA" step="0.1" value="0">
+                    </label>
+                    <label>Excluded Length (ft)
+                        <input type="number" id="noDeseadoL" step="0.1" value="0">
+                    </label>
+                </div>
+            </section>
+
+            <!-- Second Floor Toggle -->
+            <section class="card">
+                <label class="toggle">
+                    <input type="checkbox" id="secondFloor">
+                    <span>Add Second Floor</span>
+                </label>
+
+                <div id="secondFloorFields" class="grid hidden">
+                    <label>Width (ft)
+                        <input type="number" id="ancho2" step="0.1">
+                    </label>
+                    <label>Length (ft)
+                        <input type="number" id="largo2" step="0.1">
+                    </label>
+                    <label>Wall Height (ft)
+                        <input type="number" id="alturaP2" step="0.1">
+                    </label>
+                    <label>Roof Height (ft)
+                        <input type="number" id="alturaT2" step="0.1">
+                    </label>
+                    <label>Excluded Width (ft)
+                        <input type="number" id="noDeseadoA2" step="0.1" value="0">
+                    </label>
+                    <label>Excluded Length (ft)
+                        <input type="number" id="noDeseadoL2" step="0.1" value="0">
+                    </label>
+                </div>
+            </section>
+
+            <!-- Test Values -->
+            <section class="card">
+                <h2>Test Values</h2>
+                <div class="grid">
+                    <label>CFM50
+                        <input type="number" id="cfm" step="0.1" required>
+                    </label>
+                    <label>CFM25
+                        <input type="number" id="cfn" step="0.1" required>
+                    </label>
+                </div>
+            </section>
+
+            <button type="submit" class="btn">Calculate</button>
+        </form>
+
+        <!-- Results -->
+        <section id="results" class="card results hidden">
+            <h2>Results</h2>
+            <div id="resultsContent"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
